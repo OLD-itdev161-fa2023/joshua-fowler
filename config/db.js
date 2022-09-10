@@ -1,12 +1,12 @@
-import  Mongoose  from "mongoose";
-import config from 'config';
+import  Mongoose  from 'mongoose';
+import  config from 'config';
 
 const db = config.get('mongoURI');
 
 const connectDatabase = async () =>
 {
     try{
-        Mongoose.connect(db,
+         Mongoose.connect(db,
             { useUnifiedTopology: true });
         console.log('Connected to MongoDB');   
     }catch(error)
@@ -18,3 +18,4 @@ const connectDatabase = async () =>
 };
 
 export default connectDatabase;
+

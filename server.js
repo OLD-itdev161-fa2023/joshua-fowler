@@ -3,7 +3,7 @@ import connectDatabase from './config/db';
 
 const app = express();
 
-connectDatabase();
+connectDatabase();  
 
 app.get('/', (req, res)=>
     res.send('http get request sent to root api endpoint')
