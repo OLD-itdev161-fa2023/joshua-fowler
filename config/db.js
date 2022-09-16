@@ -1,4 +1,6 @@
+import  mongoose  from 'mongoose';
 import  Mongoose  from 'mongoose';
+
 import  config from 'config';
 
 const db = config.get('mongoURI');
