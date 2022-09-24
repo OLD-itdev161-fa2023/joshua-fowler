@@ -1,10 +1,21 @@
 import express from 'express';
 import connectDatabase from './config/db';
 import { check, validationResult } from 'express-validator';
+import cors from 'cors';
 
 // Initialize express application
 const app = express();
 
+connectDatabase();
+
+    app.use(express.json({ extended: false }));
+    app.use(
+        cors({
+            origin: 'http://localhost:3000'
+        })
+    );
+
+    app.get('/', (req, res) =>
 // Connect database
 connectDatabase();
 
@@ -18,8 +29,20 @@ app.use(express.json({ extended: false }));
  */
 app.get('/', (req, res) =>
     res.send('http get request sent to root api endpoint')
-);
+    );
 
+    app.get('/api/', (req, res) => res.send('http get request sent to api'));
+
+    app.post(
+    '/api/users',
+    [
+        check('name', 'Please enter your name')
+        .not()
+        .isEmpty(),
+        check('email', 'Please enter a valid email').isEmail(),
+        check(
+            'password',
+            'Please enter a password with 6 or more characters'
 /**
  * @route POST api/users
  * @desc Register user
@@ -42,7 +65,14 @@ app.post(
             return res.status(422).json({ errors: errors.array() });
         } else {
             return res.send(req.body);
-    }});
+        }
+    }
+);
+
+// Connection listener
+const port = 5000;
+app.listen(port, () => console.log(`Express server running on port ${port}`));
+ }});
 
 
 
