@@ -15,9 +15,6 @@ connectDatabase();
         })
     );
 
-    app.get('/', (req, res) =>
-// Connect database
-connectDatabase();
 
 // Configure Middleware
 app.use(express.json({ extended: false }));
@@ -31,22 +28,6 @@ app.get('/', (req, res) =>
     res.send('http get request sent to root api endpoint')
     );
 
-    app.get('/api/', (req, res) => res.send('http get request sent to api'));
-
-    app.post(
-    '/api/users',
-    [
-        check('name', 'Please enter your name')
-        .not()
-        .isEmpty(),
-        check('email', 'Please enter a valid email').isEmail(),
-        check(
-            'password',
-            'Please enter a password with 6 or more characters'
-/**
- * @route POST api/users
- * @desc Register user
- */
 app.post(
     '/api/users',
     [
@@ -72,9 +53,7 @@ app.post(
 // Connection listener
 const port = 5000;
 app.listen(port, () => console.log(`Express server running on port ${port}`));
- }});
 
 
 
-app.listen(3000, () => console.log('express server running on port 3000'));
 
