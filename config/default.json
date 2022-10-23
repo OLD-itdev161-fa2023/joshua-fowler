@@ -1,4 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://luke-skywalker:luke123@cluster0-aoqso.mongodb.net/test?retryWrites=true&w=majority",
-  "jwtSecret": "maytheforcebewithyou"
+    "mongoURI":"mongodb+srv://fowlerj9:z1x2c3v4b5@base1.v9ntbao.mongodb.net/?retryWrites=true&w=majority",
+    "jwtSecret": "maytheforcebewithyou"
 }

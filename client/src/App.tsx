@@ -1,13 +1,9 @@
+import React from 'react';
 import './App.css';
 import axios from 'axios';
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import Register from './components/Register/Register';
-import Login from './components/Login/Login';
 
 class App extends React.Component {
-
-        state = {
+    state = {
         data: null
     }
 
@@ -22,8 +18,6 @@ class App extends React.Component {
             console.error(`Error fetching data: ${error}`);
         })
     }
-
-
 
     render() {
         return (
@@ -54,8 +48,14 @@ class App extends React.Component {
             </main>
             </div>
         </Router>
+        <div className="App">
+            <header className="App-header">
+            GoodThings
+            </header>
+            {this.state.data}
+        </div>
         );
     }
-}
+    }
 
 export default App;
