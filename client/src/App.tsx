@@ -21,6 +21,33 @@ class App extends React.Component {
 
     render() {
         return (
+        <Router>
+            <div className="App">
+            <header className="App-header">
+                <h1>GoodThings</h1>
+                <ul>
+                <li>
+                    <Link to="/">Home</Link>
+                </li>
+                <li>
+                    <Link to="/register">Register</Link>
+                </li>
+                <li>
+                    <Link to="/login">Login</Link>
+                </li>
+                </ul>
+            </header>
+            <main>
+                <Route exact path="/">
+                {this.state.data}
+                </Route>
+                <Switch>
+                <Route exact path="/register" component={Register} />
+                <Route exact path="/login" component={Login} />
+                </Switch>
+            </main>
+            </div>
+        </Router>
         <div className="App">
             <header className="App-header">
             GoodThings

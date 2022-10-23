@@ -27,8 +27,9 @@
     "esm": "^3.2.25",
     "express": "^4.18.1",
     "express-validator": "^6.14.2",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.6.0"
+    "mongoose": "^6.6.0",
+    "react-router-dom": "^5.3.0",
+    "jsonwebtoken": "^8.5.1"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",

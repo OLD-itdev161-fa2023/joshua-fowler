@@ -1,6 +1,11 @@
 import mongoose from 'mongoose';
 
 const UserSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    email: {
     First_Name: {
         type: String,
         required: true
@@ -9,26 +14,6 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true,
         unique: true
-    },
-    Science: {
-        type: String,
-        required: true
-    },
-    Math: {
-        type: String,
-        required: true
-    },
-    English: {
-        type: String,
-        required: true
-    },
-    History: {
-        type: String,
-        required: true
-    },
-    Gym: {
-        type: String,
-        required: true
     }
 });
 
