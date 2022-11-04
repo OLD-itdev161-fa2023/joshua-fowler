@@ -13,6 +13,7 @@ const Login = ({ authenticateUser }) => {
   const { email, password } = userData;
   const { errors } = errorData;
 
+
   const onChange = e => {
     const { name, value } = e.target;
     setUserData({
@@ -27,6 +28,7 @@ const Login = ({ authenticateUser }) => {
       password: password
     }
 
+
     try {
       const config = {
         headers: {
@@ -37,12 +39,10 @@ const Login = ({ authenticateUser }) => {
       const body = JSON.stringify(newUser);
       const res = await axios.post('http://localhost:5000/api/login', body, config);
 
-      // Store user data and redirect
       localStorage.setItem('token', res.data.token);
       history.push('/')
       
     } catch (error) {
-      // Clear user data
       localStorage.removeItem('token');
 
       setErrorData({
@@ -53,6 +53,7 @@ const Login = ({ authenticateUser }) => {
 
     authenticateUser();
   }
+
 
   return (
     <div>
