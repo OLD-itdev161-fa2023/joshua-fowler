@@ -9,9 +9,18 @@ import User from './models/User';
 import Post from './models/Post';
 import auth from './middleware/auth';
 
-
+// Initialize express application
 const app = express();
 connectDatabase();
+
+connectDatabase();
+
+    app.use(express.json({ extended: false }));
+    app.use(
+        cors({
+            origin: 'http://localhost:3000'
+        })
+    );
 
 app.use(express.json({ extended: false }));
 app.use(
